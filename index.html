@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>UTP Marketplace</title>
+
+  <link
+    rel="stylesheet"
+    href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="assets/css/style.css"
+  >
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        UTP Marketplace
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMain"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse"
+        id="navbarMain"
+      >
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              Inicio
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#categorias">
+              Categorías
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#productos">
+              Productos
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero text-white">
+      <div class="container py-5">
+        <span class="badge text-bg-warning mb-3">
+          Comunidad universitaria
+        </span>
+
+        <h1 class="hero__title">
+          Compra y vende dentro de la UTP
+        </h1>
+
+        <p class="hero__text mt-3">
+          Encuentra libros, tecnología, accesorios y servicios
+          ofrecidos por estudiantes.
+        </p>
+
+        <a
+          class="btn btn-light btn-lg mt-3"
+          href="#productos"
+        >
+          Explorar productos
+        </a>
+      </div>
+    </section>
+
+    <section
+      id="categorias"
+      class="container py-5"
+    >
+      <h2 class="text-center fw-bold mb-4">
+        Categorías
+      </h2>
+
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-light rounded-4">
+            <i class="bi bi-book fs-1"></i>
+            <h3 class="h5 mt-3">Libros</h3>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-light rounded-4">
+            <i class="bi bi-laptop fs-1"></i>
+            <h3 class="h5 mt-3">Tecnología</h3>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-light rounded-4">
+            <i class="bi bi-calculator fs-1"></i>
+            <h3 class="h5 mt-3">Accesorios</h3>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-light rounded-4">
+            <i class="bi bi-person-workspace fs-1"></i>
+            <h3 class="h5 mt-3">Servicios</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="productos"
+      class="bg-light py-5"
+    >
+      <div class="container">
+        <h2 class="fw-bold mb-4">
+          Productos destacados
+        </h2>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card product-card">
+              <div class="card-body">
+                <span class="badge text-bg-secondary">
+                  Accesorios
+                </span>
+
+                <h3 class="h5 mt-3">
+                  Calculadora científica
+                </h3>
+
+                <p>
+                  Calculadora usada en buen estado.
+                </p>
+
+                <p class="product-card__price">
+                  S/ 55.00
+                </p>
+
+                <button class="btn btn-marketplace">
+                  Ver producto
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card product-card">
+              <div class="card-body">
+                <span class="badge text-bg-secondary">
+                  Libros
+                </span>
+
+                <h3 class="h5 mt-3">
+                  Libro de cálculo
+                </h3>
+
+                <p>
+                  Libro seminuevo para estudiantes.
+                </p>
+
+                <p class="product-card__price">
+                  S/ 35.00
+                </p>
+
+                <button class="btn btn-marketplace">
+                  Ver producto
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="card product-card">
+              <div class="card-body">
+                <span class="badge text-bg-secondary">
+                  Tecnología
+                </span>
+
+                <h3 class="h5 mt-3">
+                  Teclado mecánico
+                </h3>
+
+                <p>
+                  Teclado compacto para programación.
+                </p>
+
+                <p class="product-card__price">
+                  S/ 90.00
+                </p>
+
+                <button class="btn btn-marketplace">
+                  Ver producto
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      UTP Marketplace — Proyecto académico
+    </div>
+  </footer>
+
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

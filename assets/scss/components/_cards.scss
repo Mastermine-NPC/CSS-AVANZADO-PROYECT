@@ -1,0 +1,17 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.product-card {
+  height: 100%;
+  border: 0;
+  border-radius: v.$border-radius-md;
+  overflow: hidden;
+
+  @include m.card-hover;
+
+  &__price {
+    color: v.$primary-color;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}

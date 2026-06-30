@@ -1,0 +1,39 @@
+{
+  "name": "css-avanzado-proyect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass assets/scss/main.scss assets/css/style.css",
+    "sass:watch": "sass --watch assets/scss/main.scss assets/css/style.css",
+    "sass:build": "sass assets/scss/main.scss assets/css/style.min.css --style=compressed --no-source-map",
+    "serve": "http-server . -p 3000 -c-1",
+    "dev": "concurrently \"npm run sass:watch\" \"npm run serve\"",
+    "build": "npm run sass && npm run sass:build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mastermine-NPC/CSS-AVANZADO-PROYECT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mastermine-NPC/CSS-AVANZADO-PROYECT/issues"
+  },
+  "homepage": "https://github.com/Mastermine-NPC/CSS-AVANZADO-PROYECT#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3",
+    "http-server": "^14.1.1",
+    "sass": "^1.101.0"
+  }
+}
