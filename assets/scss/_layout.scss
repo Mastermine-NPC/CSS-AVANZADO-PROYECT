@@ -1,0 +1,10 @@
+.filter-sidebar {
+    background-color: #ffffff;
+    border-radius: 8px;
+    
+    // Nesting
+    .form-check-label {
+        font-size: 0.9rem;
+        cursor: pointer;
+    }
+}

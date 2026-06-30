@@ -1,0 +1,63 @@
+.hover-transform {
+    transition: transform $transition-speed ease-in-out, box-shadow $transition-speed ease-in-out;
+    
+    &:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+}
+
+.category-card {
+    transition: all $transition-speed ease;
+    cursor: pointer;
+    background-color: $light-bg;
+
+    .card-title {
+        transition: color $transition-speed ease;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        
+        .card-title {
+            color: $utp-red !important;
+        }
+    }
+}
+
+.product-card {
+    @include hover-lift();
+    overflow: hidden;
+
+    .product-img-wrapper {
+        transition: opacity $transition-speed ease;
+        
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
+
+.hover-zoom {
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease, color 0.2s ease;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-element {
+    animation: fadeIn 0.8s ease-out forwards;
+}
