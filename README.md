@@ -23,4 +23,4 @@ Para trabajar en este proyecto, asegúrate de tener instalado [Node.js](https://
 1. **Clonar el repositorio:**
    ```bash
    git clone https://github.com/Mastermine-NPC/CSS-AVANZADO-PROYECT.git
-   cd utp-marketplace
+   cd CSS-AVANZADO-PROYECT
