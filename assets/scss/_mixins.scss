@@ -1,8 +1,40 @@
 @mixin hover-lift() {
+    -webkit-transition: -webkit-transform $transition-speed ease, box-shadow $transition-speed ease;
+    -moz-transition: transform $transition-speed ease, box-shadow $transition-speed ease;
     transition: transform $transition-speed ease, box-shadow $transition-speed ease;
-    
+
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+        -webkit-transform: translateY(-4px);
+        transform: translateY(-4px);
+        box-shadow: $shadow-md;
+    }
+}
+
+@mixin market-button($bg, $color) {
+    background-color: $bg;
+    border-color: $bg;
+    color: $color;
+    font-weight: 700;
+    -webkit-transition: -webkit-transform $transition-speed ease, background-color $transition-speed ease;
+    transition: transform $transition-speed ease, background-color $transition-speed ease;
+
+    &:hover {
+        background-color: darken($bg, 7%);
+        border-color: darken($bg, 7%);
+        color: $color;
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+}
+
+@mixin fit-image($height) {
+    width: 100%;
+    height: $height;
+    object-fit: cover;
+}
+
+@mixin respond-max($width) {
+    @media (max-width: $width) {
+        @content;
     }
 }

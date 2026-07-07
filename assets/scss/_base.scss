@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-base;
+    color: $dark-text;
+    background-color: $light-bg;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.btn-market,
+.btn-primary {
+    @include market-button($utp-red, $white);
+}
+
+.btn-outline-market,
+.btn-outline-primary {
+    border-color: $utp-red;
+    color: $utp-red;
+    font-weight: 700;
+    -webkit-transition: -webkit-transform $transition-speed ease, background-color $transition-speed ease;
+    transition: transform $transition-speed ease, background-color $transition-speed ease;
+
+    &:hover {
+        background-color: $utp-red;
+        border-color: $utp-red;
+        color: $white;
+        -webkit-transform: translateY(-2px);
+        transform: translateY(-2px);
+    }
+}
+
+.section-padding {
+    padding: $space-section 0;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 1.75rem;
+
+    h2 {
+        font-weight: 800;
+        color: $utp-blue;
+        margin-bottom: 0;
+    }
+}
+
+.section-kicker {
+    display: inline-block;
+    color: $utp-red;
+    font-weight: 800;
+    letter-spacing: 0;
+    margin-bottom: 0.35rem;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+}

@@ -4,86 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del Producto | UTP Marketplace</title>
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="bg-light">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary custom-navbar">
+    <header class="market-header">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">UTP Marketplace</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
-                </ul>
+            <div class="market-header__top">
+                <a class="market-brand" href="../index.html">
+                    <strong>UTP Marketplace</strong>
+                    <span>Compra, vende e intercambia entre estudiantes</span>
+                </a>
+                <form class="market-search" action="catalogo.html">
+                    <label class="visually-hidden" for="mainSearch">Buscar productos</label>
+                    <input id="mainSearch" name="q" type="search" placeholder="Buscar libros, calculadoras, componentes o servicios">
+                    <button type="submit">Buscar</button>
+                </form>
+                <nav class="market-nav" aria-label="Navegacion principal">
+                    <a href="../index.html">Inicio</a>
+                    <a href="catalogo.html">Catalogo</a>
+                    <a href="carrito.html">Carrito</a>
+                    <a href="../index.html#contacto">Contacto</a>
+                </nav>
             </div>
         </div>
-    </nav>
+    </header>
 
     <div class="container mt-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="catalogo.html">Catálogo</a></li>
+                <li class="breadcrumb-item"><a href="catalogo.html">Catalogo</a></li>
                 <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-category">Cargando...</li>
             </ol>
         </nav>
     </div>
 
     <main class="container py-4 mb-5">
-        <div class="card shadow-sm border-0 product-detail-card">
-            <div class="row g-0">
-                
-                <div class="col-md-6 bg-secondary bg-opacity-10 d-flex justify-content-center align-items-center p-5 product-image-container">
-                    <div class="text-center fade-in-element">
-                        <span class="display-1 text-muted">📁</span>
-                        <p class="text-muted mt-2" id="product-image-text">Cargando imagen...</p>
+        <article class="product-detail-card">
+            <div class="row g-0 align-items-stretch">
+                <div class="col-lg-6">
+                    <div class="product-image-container">
+                        <img id="product-image" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="Imagen del producto seleccionado">
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="card-body p-5 d-flex flex-column h-100">
-                        <div class="mb-2">
-                            <span class="badge bg-primary me-2" id="product-category">Categoría</span>
-                            <span class="badge bg-secondary" id="product-condition">Condición</span>
+                <div class="col-lg-6">
+                    <div class="product-detail-content">
+                        <span class="section-kicker">Detalle del producto</span>
+                        <h1 id="product-title">Cargando titulo...</h1>
+                        <p class="detail-price" id="product-price">S/ 0.00</p>
+                        <div class="detail-badges">
+                            <span class="badge product-badge" id="product-category">Categoria</span>
+                            <span class="badge condition-badge" id="product-condition">Condicion</span>
                         </div>
-                        
-                        <h1 class="card-title fw-bold mb-3" id="product-title">Cargando título...</h1>
-                        
-                        <h2 class="text-primary fw-bold mb-4" id="product-price">S/ 0.00</h2>
-                        
-                        <h5 class="fw-semibold">Descripción del producto</h5>
-                        <p class="card-text text-muted mb-4" id="product-description">
-                            Cargando descripción detallada del producto...
-                        </p>
-                        
-                        <div class="border-top pt-4 mt-auto">
-                            <p class="mb-2"><small class="text-muted">Vendido por:</small> <strong id="product-seller">Cargando...</strong></p>
-                            
-                            <div class="d-grid gap-2 d-md-flex mt-4">
-                                <button class="btn btn-primary btn-lg px-4 me-md-2 hover-zoom" type="button" id="btn-add-cart">
-                                    🛒 Añadir al Carrito
-                                </button>
-                                <button class="btn btn-outline-secondary btn-lg px-4 hover-zoom" type="button">
-                                    ✉️ Contactar Vendedor
-                                </button>
-                            </div>
+                        <section class="detail-block">
+                            <h2>Descripcion</h2>
+                            <p id="product-description">Cargando descripcion detallada del producto...</p>
+                        </section>
+                        <section class="detail-block seller-block">
+                            <h2>Vendedor</h2>
+                            <p id="product-seller">Cargando...</p>
+                        </section>
+                        <div class="detail-actions">
+                            <button class="btn btn-market btn-lg" type="button" id="btn-add-cart">Guardar en carrito</button>
+                            <button class="btn btn-outline-market btn-lg" type="button">Contactar al vendedor</button>
+                            <a class="btn btn-outline-secondary btn-lg" href="catalogo.html">Volver al catalogo</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script src="../js/products.js"></script>
 </body>
 </html>

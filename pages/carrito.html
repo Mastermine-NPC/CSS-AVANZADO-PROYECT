@@ -8,44 +8,57 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body class="bg-light">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary custom-navbar">
+    <header class="market-header">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">UTP Marketplace</a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="../index.html">Inicio</a>
-                <a class="nav-link" href="catalogo.html">Catálogo</a>
+            <div class="market-header__top">
+                <a class="market-brand" href="../index.html">
+                    <strong>UTP Marketplace</strong>
+                    <span>Compra, vende e intercambia entre estudiantes</span>
+                </a>
+                <form class="market-search" action="catalogo.html">
+                    <label class="visually-hidden" for="mainSearch">Buscar productos</label>
+                    <input id="mainSearch" name="q" type="search" placeholder="Buscar libros, calculadoras, componentes o servicios">
+                    <button type="submit">Buscar</button>
+                </form>
+                <nav class="market-nav" aria-label="Navegacion principal">
+                    <a href="../index.html">Inicio</a>
+                    <a href="catalogo.html">Catalogo</a>
+                    <a class="active" href="carrito.html">Carrito</a>
+                    <a href="../index.html#contacto">Contacto</a>
+                </nav>
             </div>
         </div>
-    </nav>
+    </header>
 
     <main class="container py-5">
-        <h2 class="mb-4">Tu Carrito de Compras</h2>
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body">
-                        <table class="table align-middle">
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Precio</th>
-                                    <th>Acción</th>
-                                </tr>
-                            </thead>
-                            <tbody id="cart-items">
-                                </tbody>
-                        </table>
+        <div class="cart-header">
+            <div>
+                <span class="section-kicker">Carrito</span>
+                <h1>Productos guardados</h1>
+                <p>Resumen de la simulacion de compra almacenada en el navegador.</p>
+            </div>
+        </div>
+        <div class="row g-4 align-items-start">
+            <section class="col-lg-8">
+                <div class="cart-panel">
+                    <div class="cart-list-header">
+                        <h2 class="h5 mb-0">Detalle de productos</h2>
+                        <span id="cart-count-label">0 productos</span>
                     </div>
+                    <div id="cart-items" class="cart-items"></div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card shadow-sm border-0 p-3">
-                    <h4>Resumen</h4>
-                    <p>Total: <strong id="cart-total">S/ 0.00</strong></p>
-                    <button class="btn btn-success w-100">Finalizar Compra</button>
+            </section>
+            <aside class="col-lg-4">
+                <div class="cart-summary">
+                    <h2 class="h4">Resumen de compra</h2>
+                    <div class="summary-row"><span>Cantidad de productos</span><strong id="cart-count">0</strong></div>
+                    <div class="summary-row"><span>Subtotal</span><strong id="cart-subtotal">S/ 0.00</strong></div>
+                    <div class="summary-total"><span>Total</span><strong id="cart-total">S/ 0.00</strong></div>
+                    <button class="btn btn-success w-100 mb-2" type="button">Finalizar simulacion de compra</button>
+                    <a class="btn btn-outline-market w-100 mb-2" href="catalogo.html">Seguir comprando</a>
+                    <button class="btn btn-outline-danger w-100" type="button" id="btn-clear-cart">Vaciar carrito</button>
                 </div>
-            </div>
+            </aside>
         </div>
     </main>
 

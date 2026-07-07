@@ -1,10 +1,7 @@
 @import 'variables';
 @import 'mixins';
+@import 'base';
+@import 'layout';
 @import 'components';
 @import 'pages';
-@import 'layout';
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: $dark-text;
-}
+@import 'responsive';

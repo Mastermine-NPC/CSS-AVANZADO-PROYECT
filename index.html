@@ -4,73 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UTP Marketplace | Inicio</title>
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary custom-navbar">
+    <header class="market-header">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">UTP Marketplace</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/catalogo.html">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pages/carrito.html">Carrito</a>
-                    </li>
-                </ul>
+            <div class="market-header__top">
+                <a class="market-brand" href="index.html">
+                    <strong>UTP Marketplace</strong>
+                    <span>Compra, vende e intercambia entre estudiantes</span>
+                </a>
+                <form class="market-search" action="pages/catalogo.html">
+                    <label class="visually-hidden" for="mainSearch">Buscar productos</label>
+                    <input id="mainSearch" name="q" type="search" placeholder="Buscar libros, calculadoras, componentes o servicios">
+                    <button type="submit">Buscar</button>
+                </form>
+                <nav class="market-nav" aria-label="Navegacion principal">
+                    <a class="active" href="index.html">Inicio</a>
+                    <a href="pages/catalogo.html">Catalogo</a>
+                    <a href="pages/carrito.html">Carrito</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
             </div>
-        </div>
-    </nav>
-
-    <header class="hero-section text-center text-white d-flex align-items-center">
-        <div class="container">
-            <h1 class="display-3 fw-bold mb-4">Bienvenido a la comunidad UTP</h1>
-            <p class="lead mb-5">Compra, vende e intercambia libros, proyectos y accesorios con otros estudiantes de manera segura.</p>
-            <a href="pages/catalogo.html" class="btn btn-light btn-lg text-primary fw-bold hover-transform">Explorar Catálogo</a>
         </div>
     </header>
 
-    <section class="container py-5">
-        <h2 class="text-center mb-5 fw-bold">¿Qué estás buscando hoy?</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card category-card h-100 text-center shadow-sm border-0">
-                    <div class="card-body py-5">
-                        <h3 class="card-title text-primary">📚 Libros</h3>
-                        <p class="card-text text-muted">Encuentra textos académicos y apuntes de ciclos anteriores.</p>
+    <main>
+        <section class="market-hero">
+            <div class="container">
+                <div class="market-hero__content">
+                    <div class="market-hero__text">
+                        <span class="section-kicker">Marketplace universitario</span>
+                        <h1>Encuentra materiales, libros y accesorios para tu vida universitaria</h1>
+                        <p>Compra, vende o intercambia productos con otros estudiantes de forma rapida y organizada.</p>
+                        <div class="hero-actions">
+                            <a href="pages/catalogo.html" class="btn btn-market btn-lg">Explorar catalogo</a>
+                            <a href="pages/catalogo.html" class="btn btn-outline-market btn-lg">Publicar producto</a>
+                        </div>
                     </div>
+                    <img class="market-hero__image" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1100&q=80" alt="Estudiantes universitarios usando laptop y libros">
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card category-card h-100 text-center shadow-sm border-0">
-                    <div class="card-body py-5">
-                        <h3 class="card-title text-primary">💻 Electrónica</h3>
-                        <p class="card-text text-muted">Calculadoras, componentes, laptops y accesorios útiles.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card category-card h-100 text-center shadow-sm border-0">
-                    <div class="card-body py-5">
-                        <h3 class="card-title text-primary">📐 Proyectos</h3>
-                        <p class="card-text text-muted">Materiales, maquetas y herramientas para tus talleres.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
+        <section class="quick-section">
+            <div class="container">
+                <div class="quick-grid">
+                    <article class="quick-card"><span class="quick-card__icon account-icon"></span><h2>Ingresa a tu cuenta</h2><p>Revisa tus productos guardados.</p><a href="pages/carrito.html">Ver opcion</a></article>
+                    <article class="quick-card"><span class="quick-card__icon location-icon"></span><h2>Ubicacion universitaria</h2><p>Encuentra recursos cerca del campus.</p><a href="pages/catalogo.html">Explorar</a></article>
+                    <article class="quick-card"><span class="quick-card__icon price-icon"></span><h2>Menos de S/50</h2><p>Opciones economicas para clase.</p><a href="pages/catalogo.html">Revisar productos</a></article>
+                    <article class="quick-card"><span class="quick-card__icon popular-icon"></span><h2>Mas buscados</h2><p>Libros, calculadoras y electronica.</p><a href="pages/catalogo.html">Explorar</a></article>
+                    <article class="quick-card"><span class="quick-card__icon secure-icon"></span><h2>Compra segura</h2><p>Simulacion organizada para el curso.</p><a href="pages/catalogo.html">Ver opcion</a></article>
+                    <article class="quick-card"><span class="quick-card__icon category-icon"></span><h2>Categorias</h2><p>Filtra segun tu necesidad.</p><a href="#categorias">Explorar</a></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="categorias">
+            <div class="container">
+                <div class="section-heading"><span class="section-kicker">Categorias</span><h2>Busca por necesidad academica</h2></div>
+                <div class="category-grid">
+                    <article class="category-card"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=80" alt="Libros y apuntes universitarios"><div class="category-card__body"><h3>Libros y apuntes</h3><p>Textos, guias y separatas para cursos de ciclo.</p><a href="pages/catalogo.html" class="btn btn-outline-market btn-sm">Ver categoria</a></div></article>
+                    <article class="category-card"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Laptop y materiales electronicos"><div class="category-card__body"><h3>Electronica</h3><p>Calculadoras, placas, componentes y accesorios.</p><a href="pages/catalogo.html" class="btn btn-outline-market btn-sm">Ver categoria</a></div></article>
+                    <article class="category-card"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=80" alt="Maqueta universitaria"><div class="category-card__body"><h3>Proyectos y maquetas</h3><p>Materiales de taller, prototipos y herramientas.</p><a href="pages/catalogo.html" class="btn btn-outline-market btn-sm">Ver categoria</a></div></article>
+                    <article class="category-card"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Mochila universitaria"><div class="category-card__body"><h3>Accesorios universitarios</h3><p>Mochilas, reglas, cuadernos y utiles diarios.</p><a href="pages/catalogo.html" class="btn btn-outline-market btn-sm">Ver categoria</a></div></article>
+                    <article class="category-card"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=80" alt="Estudiantes trabajando en grupo"><div class="category-card__body"><h3>Servicios academicos</h3><p>Apoyo entre estudiantes para cursos y proyectos.</p><a href="pages/catalogo.html" class="btn btn-outline-market btn-sm">Ver categoria</a></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding products-band">
+            <div class="container">
+                <div class="section-heading"><span class="section-kicker">Destacados</span><h2>Productos destacados</h2></div>
+                <div class="featured-grid">
+                    <article class="market-product-card"><img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=700&q=80" alt="Libro academico"><div><span>Libros</span><strong>S/ 45.00</strong><h3>Calculo de una variable</h3><p>Usado - Buen estado</p><a href="pages/producto.html?id=1" class="btn btn-outline-market btn-sm">Ver detalle</a></div></article>
+                    <article class="market-product-card"><img src="https://images.unsplash.com/photo-1603732551658-5fabbafa84eb?auto=format&fit=crop&w=700&q=80" alt="Arduino Mega"><div><span>Electronica</span><strong>S/ 35.00</strong><h3>Arduino Mega 2560</h3><p>Usado - Como nuevo</p><a href="pages/producto.html?id=2" class="btn btn-outline-market btn-sm">Ver detalle</a></div></article>
+                    <article class="market-product-card"><img src="https://images.unsplash.com/photo-1595877244574-e90ce41ce089?auto=format&fit=crop&w=700&q=80" alt="Kit de arquitectura"><div><span>Proyectos</span><strong>S/ 60.00</strong><h3>Kit de arquitectura</h3><p>Nuevo</p><a href="pages/producto.html?id=3" class="btn btn-outline-market btn-sm">Ver detalle</a></div></article>
+                    <article class="market-product-card"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80" alt="Mochila universitaria"><div><span>Accesorios</span><strong>S/ 50.00</strong><h3>Mochila universitaria</h3><p>Usado - Buen estado</p><a href="pages/producto.html?id=4" class="btn btn-outline-market btn-sm">Ver detalle</a></div></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <div class="container"><h2>Contacto</h2><p>Proyecto academico estatico para simular compras e intercambios entre estudiantes UTP.</p></div>
+        </section>
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
