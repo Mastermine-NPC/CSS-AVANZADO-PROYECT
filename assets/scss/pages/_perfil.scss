@@ -1,0 +1,10 @@
+.page-profile {
+  .profile-card {
+    background: $color-surface;
+    border-color: $color-border;
+    max-width: 42rem;
+  }
+
+  dt { color: $color-text; }
+  dd { color: $color-text-muted; }
+}

@@ -1,2 +1,22 @@
-.table-responsive{border-radius:0 0 radius(md) radius(md)}
+.page-admin {
+  .panel-page { max-width: 1200px; }
+  .table { min-width: 760px; }
 
+  thead { background: $color-surface-light; }
+  th { color: $color-primary; font-size: .78rem; letter-spacing: .05em; text-transform: uppercase; }
+  td, th { padding: 1rem; }
+  .btn-sm { padding: .3rem .65rem; }
+}
+
+.admin-summary {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  box-shadow: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem;
+
+  span { color: $color-text-muted; }
+  strong { color: $color-primary; font-size: 1.5rem; }
+}

@@ -1,0 +1,11 @@
+.page-publish-product {
+  .panel-page { max-width: 900px; }
+
+  #publish-form {
+    background: $color-surface;
+    border-color: $color-border;
+    padding: 2rem;
+  }
+
+  #description { resize: vertical; }
+}

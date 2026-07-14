@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administración | UTP Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="admin" class="page-admin d-flex flex-column min-vh-100">
+  <header id="site-header"></header>
+  <main class="container py-5 panel-page">
+    <h1 class="page-title">Administración</h1>
+    <p class="text-secondary">Consulta usuarios y productos y cambia su estado básico.</p>
+    <div id="alert-container"></div>
+    <p id="admin-status" class="content-card">Comprobando acceso…</p>
+    <div id="admin-content" hidden>
+      <section class="row g-3 mb-5" aria-label="Resumen administrativo">
+        <div class="col-sm-6"><article class="admin-summary"><span>Usuarios</span><strong id="users-total">0</strong></article></div>
+        <div class="col-sm-6"><article class="admin-summary"><span>Productos</span><strong id="products-total">0</strong></article></div>
+      </section>
+      <section class="mb-5"><h2 class="h3">Usuarios</h2><div class="table-responsive content-card p-0"><table class="table align-middle mb-0"><thead><tr><th>Nombre</th><th>Correo</th><th>Carrera</th><th>Campus</th><th>Rol</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="users-table-body"></tbody></table></div></section>
+      <section><h2 class="h3">Productos</h2><div class="table-responsive content-card p-0"><table class="table align-middle mb-0"><thead><tr><th>Producto</th><th>Propietario</th><th>Categoría</th><th>Modalidad</th><th>Estado</th><th>Acción</th></tr></thead><tbody id="products-table-body"></tbody></table></div></section>
+    </div>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

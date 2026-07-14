@@ -1,40 +1,17 @@
-@mixin hover-lift() {
-    -webkit-transition: -webkit-transform $transition-speed ease, box-shadow $transition-speed ease;
-    -moz-transition: transform $transition-speed ease, box-shadow $transition-speed ease;
-    transition: transform $transition-speed ease, box-shadow $transition-speed ease;
-
-    &:hover {
-        -webkit-transform: translateY(-4px);
-        transform: translateY(-4px);
-        box-shadow: $shadow-md;
-    }
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 992px) { @content; }
+  }
 }
 
-@mixin market-button($bg, $color) {
-    background-color: $bg;
-    border-color: $bg;
-    color: $color;
-    font-weight: 700;
-    -webkit-transition: -webkit-transform $transition-speed ease, background-color $transition-speed ease;
-    transition: transform $transition-speed ease, background-color $transition-speed ease;
+@mixin card-hover {
+  transition: transform $transition, border-color $transition, box-shadow $transition;
 
-    &:hover {
-        background-color: darken($bg, 7%);
-        border-color: darken($bg, 7%);
-        color: $color;
-        -webkit-transform: translateY(-2px);
-        transform: translateY(-2px);
-    }
-}
-
-@mixin fit-image($height) {
-    width: 100%;
-    height: $height;
-    object-fit: cover;
-}
-
-@mixin respond-max($width) {
-    @media (max-width: $width) {
-        @content;
-    }
+  &:hover {
+    border-color: rgba($color-primary, .55);
+    transform: translateY(-4px);
+    box-shadow: 0 .55rem 1.15rem rgba(37, 99, 235, .1);
+  }
 }

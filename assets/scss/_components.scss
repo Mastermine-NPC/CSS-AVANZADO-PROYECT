@@ -1,218 +1,98 @@
- .category-grid,
-.quick-grid,
-.featured-grid,
-.product-grid {
-    display: grid;
-    gap: 1.2rem;
+.content-card,
+.filter-panel,
+.auth-card,
+.hero__panel {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: 1.5rem;
 }
 
-.quick-grid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+.product-card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+  @include card-hover;
+
+  &__image {
+    background-color: $color-surface-light;
+    border-radius: $radius $radius 0 0;
+    display: block;
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+  }
+  &__price { color: $color-primary; font-size: 1.2rem; font-weight: 700; }
+  &__owner { color: $color-text-muted; font-size: .875rem; }
 }
 
-.category-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+.product-description {
+  color: $color-text-muted;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  white-space: pre-line;
+
+  &.is-expanded {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+  }
 }
 
-.featured-grid,
-.product-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+.description-toggle {
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  color: $color-text-muted;
+  font-size: .85rem;
+  margin: -.5rem 0 .75rem;
+  padding: .25rem 0;
+  text-decoration: underline;
+
+  &:hover { color: $color-primary; }
+  &:focus-visible { outline: 2px solid $color-primary; outline-offset: 2px; }
 }
-
-.quick-card,
-.category-card,
-.market-product-card,
-.filter-sidebar,
-.cart-panel,
-.cart-summary,
-.product-detail-card {
-    background: $white;
-    border: 1px solid rgba($utp-blue, 0.08);
-    border-radius: $radius-md;
-    box-shadow: $shadow-sm;
-}
-
-.quick-card,
-.category-card,
-.market-product-card {
-    @include hover-lift();
-}
-
-.quick-card {
-    padding: 1rem;
-    min-height: 170px;
-
-    &__icon {
-        display: block;
-        width: 38px;
-        height: 38px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, $utp-blue-soft, $market-yellow-strong);
-        margin-bottom: 0.8rem;
-    }
-
-    h2 {
-        color: $utp-blue;
-        font-size: 1rem;
-        font-weight: 800;
-        margin-bottom: 0.35rem;
-    }
-
-    p {
-        color: $muted-text;
-        font-size: 0.88rem;
-        margin-bottom: 0.8rem;
-    }
-
-    a {
-        color: $utp-red;
-        font-size: 0.9rem;
-        font-weight: 800;
-    }
-}
-
-.location-icon { background: linear-gradient(135deg, #dbeafe, #a7f3d0); }
-.price-icon { background: linear-gradient(135deg, #fee2e2, #fde68a); }
-.popular-icon { background: linear-gradient(135deg, #e0e7ff, #fecaca); }
-.secure-icon { background: linear-gradient(135deg, #dcfce7, #bfdbfe); }
-.category-icon { background: linear-gradient(135deg, #fef3c7, #e0e7ff); }
 
 .category-card {
-    overflow: hidden;
-
-    img {
-        @include fit-image(155px);
-    }
-
-    &__body {
-        padding: 1rem;
-        display: flex;
-        min-height: 205px;
-        flex-direction: column;
-        align-items: flex-start;
-
-        h3 {
-            color: $utp-blue;
-            font-size: 1rem;
-            font-weight: 800;
-        }
-
-        p {
-            color: $muted-text;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            margin-top: auto;
-        }
-    }
+  @include card-hover;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  color: $color-text;
+  display: block;
+  font-weight: 600;
+  padding: 1.4rem;
+  text-align: center;
+  text-decoration: none;
 }
 
-.market-product-card {
-    overflow: hidden;
-
-    img {
-        @include fit-image(180px);
-    }
-
-    > div {
-        padding: 1rem;
-    }
-
-    span {
-        color: $utp-blue;
-        font-size: 0.78rem;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
-
-    strong {
-        display: block;
-        color: $utp-red;
-        font-size: 1.35rem;
-        margin: 0.25rem 0;
-    }
-
-    h3 {
-        color: $dark-text;
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 0.35rem;
-    }
-
-    p,
-    small {
-        color: $muted-text;
-        display: block;
-        margin-bottom: 0.7rem;
-    }
+.empty-state {
+  background: $color-surface;
+  border: 1px dashed $color-border;
+  border-radius: $radius;
+  color: $color-text-muted;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
 }
 
-.catalog-card {
-    display: flex;
-    flex-direction: column;
+.cart-item {
+  border-bottom: 1px solid $color-border;
+  padding: 1rem 0;
 
-    p {
-        min-height: 54px;
-    }
-
-    &__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 1rem;
-    }
+  &:first-child { padding-top: 0; }
+  &:last-child { border-bottom: 0; padding-bottom: 0; }
 }
 
-.product-badge,
-.condition-badge,
-.result-pill {
-    background: $utp-blue-soft;
-    color: $utp-blue;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 0.38rem 0.65rem;
-}
-
-.condition-badge,
-.result-pill {
-    background: rgba($utp-red, 0.08);
-    color: $utp-red-dark;
-}
-
-.filter-sidebar,
-.cart-panel,
-.cart-summary {
-    padding: 1.35rem;
-
-    h2 {
-        color: $utp-blue;
-        font-weight: 800;
-    }
-
-    .form-label {
-        color: $dark-text;
-        font-weight: 700;
-    }
-}
-
-.catalog-state,
-.cart-empty {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 3rem 1rem;
-    background: $white;
-    border-radius: $radius-md;
-    border: 1px dashed rgba($utp-blue, 0.22);
-
-    h3 {
-        color: $utp-blue;
-        font-weight: 800;
-    }
-
-    p {
-        color: $muted-text;
-    }
+.product-thumbnail {
+  background: $color-surface-light;
+  border-radius: 8px;
+  height: 64px;
+  object-fit: cover;
+  width: 64px;
 }

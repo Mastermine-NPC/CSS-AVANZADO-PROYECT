@@ -1,0 +1,40 @@
+.page-product {
+  .product-detail {
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    box-shadow: none;
+    padding: 2rem;
+
+    &__image {
+      background-color: $color-surface;
+      border: 1px solid $color-border;
+      border-radius: 12px;
+      max-height: 420px;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    &__description {
+      color: $color-text-muted;
+      margin-block: 1.5rem;
+      white-space: pre-line;
+    }
+  }
+
+  .product-data {
+    border-top: 1px solid $color-border;
+    padding-top: 1rem;
+
+    dt { color: $color-text; }
+    dd { color: $color-text-muted; }
+    [data-product-price] { color: $color-primary; font-size: 1.25rem; font-weight: 700; }
+  }
+
+  .product-owner-label,
+  .product-owner-value {
+    border-top: 1px solid $color-border;
+    margin-top: .5rem;
+    padding-top: 1rem;
+  }
+}

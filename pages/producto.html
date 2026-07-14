@@ -1,1 +1,34 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Producto | UTP Marketplace</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet"><link href="../assets/css/style.css" rel="stylesheet"></head><body data-page="product"><div id="app-header"></div><div id="app-alerts" class="alert-zone container" aria-live="polite"></div><main class="section"><div class="container"><nav aria-label="Migas de pan"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../index.html">Inicio</a></li><li class="breadcrumb-item"><a href="catalogo.html">Catálogo</a></li><li class="breadcrumb-item active">Detalle</li></ol></nav><article id="productDetail" class="product-detail"><div class="product-gallery" data-gallery><div class="loader-state"><span class="app-loader"></span></div></div><div class="product-info"><span class="eyebrow">Publicación verificada</span><h1 data-title>Cargando…</h1><strong class="product-info__price" data-price></strong><div class="product-meta" data-meta></div><section><h2 class="h5">Descripción</h2><p data-description></p></section><div class="owner-card"><div class="avatar"><i class="bi bi-person"></i></div><div><small>Publicado por</small><strong data-owner></strong><span>Estudiante · Identidad académica</span></div><button class="btn btn-outline-secondary btn-sm" type="button">Contactar</button></div><div class="d-grid gap-2" data-actions></div><p class="safe-note"><i class="bi bi-shield-check"></i> Coordina en lugares públicos. La plataforma no procesa pagos.</p></div></article><section class="section px-0 pb-0"><div class="section-heading"><div><span class="eyebrow">También podría interesarte</span><h2>Productos relacionados</h2></div></div><div id="relatedProducts" class="product-grid"></div></section></div></main><div class="modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestTitle" aria-hidden="true"><div class="modal-dialog"><form class="modal-content" id="requestForm"><div class="modal-header"><h2 class="modal-title fs-5" id="requestTitle">Enviar solicitud</h2><button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button></div><div class="modal-body"><p>Producto: <strong data-request-product></strong></p><input type="hidden" name="type"><label class="form-label" for="requestMessage">Mensaje</label><textarea class="form-control" id="requestMessage" name="message" rows="4" required placeholder="Explica brevemente tu propuesta"></textarea></div><div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal" type="button">Cancelar</button><button class="btn btn-primary" type="submit">Enviar solicitud</button></div></form></div></div><div id="app-footer"></div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script><script type="module" src="../js/main.js"></script><script type="module" src="../js/pages/product-detail.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Producto | UTP Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="product" class="page-product d-flex flex-column min-vh-100">
+  <header id="site-header"></header>
+  <main class="container py-5">
+    <div id="alert-container"></div>
+    <article id="product-detail" class="product-detail row g-5">
+      <div class="col-lg-6"><img data-product-image class="product-detail__image" src="../assets/img/product-placeholder.svg" alt=""></div>
+      <div class="col-lg-6">
+        <span data-product-type class="badge text-bg-primary mb-3"></span>
+        <h1 data-product-name class="page-title"></h1>
+        <p data-product-description class="product-detail__description"></p>
+        <dl class="row product-data">
+          <dt class="col-5">Categoría</dt><dd data-product-category class="col-7"></dd>
+          <dt class="col-5">Estado</dt><dd data-product-status class="col-7"></dd>
+          <dt class="col-5">Condición</dt><dd data-product-condition class="col-7"></dd>
+          <dt class="col-5">Precio</dt><dd data-product-price class="col-7"></dd>
+          <dt class="col-5 product-owner-label">Publicado por</dt><dd data-product-owner class="col-7 product-owner-value"></dd>
+        </dl>
+        <button id="add-to-cart" class="btn btn-primary" type="button">Agregar al carrito</button>
+      </div>
+    </article>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

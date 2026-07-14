@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi perfil | UTP Marketplace</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="profile" class="page-profile d-flex flex-column min-vh-100">
+  <header id="site-header"></header>
+  <main class="container py-5 panel-page">
+    <h1 class="page-title">Mi perfil</h1>
+    <div id="alert-container"></div>
+    <section class="content-card profile-card">
+      <dl class="row mb-0">
+        <dt class="col-sm-4">Nombre</dt><dd data-profile-name class="col-sm-8">Cargando…</dd>
+        <dt class="col-sm-4">Correo</dt><dd data-profile-email class="col-sm-8"></dd>
+        <dt class="col-sm-4">Carrera</dt><dd data-profile-career class="col-sm-8"></dd>
+        <dt class="col-sm-4">Campus</dt><dd data-profile-campus class="col-sm-8"></dd>
+      </dl>
+      <a id="admin-link" class="btn btn-outline-primary d-none" href="admin.html">Abrir administración</a>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

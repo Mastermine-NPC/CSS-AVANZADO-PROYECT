@@ -1,6 +1,0 @@
-@mixin respond-to($name) { @media (min-width: map-get($breakpoints,$name)) { @content; } }
-@mixin flex-center { display:flex; align-items:center; justify-content:center; }
-@mixin card-hover { transition:transform $transition,box-shadow $transition; &:hover { transform:translateY(-.3rem); box-shadow:$shadow-md; } }
-@mixin line-clamp($lines:2) { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:$lines; overflow:hidden; }
-@mixin focus-ring { &:focus-visible { outline:.2rem solid rgba($primary,.35); outline-offset:.15rem; } }
-

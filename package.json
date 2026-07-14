@@ -1,8 +1,8 @@
 {
   "name": "utp-marketplace",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "Marketplace académico multipágina para estudiantes, construido con Bootstrap 5, Sass, ES Modules y Firebase.",
+  "description": "Marketplace académico multipágina con Bootstrap, Sass y Firebase.",
   "type": "module",
   "scripts": {
     "sass": "sass assets/scss/main.scss assets/css/style.css --source-map",
@@ -11,9 +11,7 @@
     "serve": "http-server . -p 3000 -c-1",
     "dev": "concurrently \"npm run sass:watch\" \"npm run serve\"",
     "build": "npm run sass && npm run sass:build",
-    "check:js": "node scripts/check-js.mjs",
-    "check:links": "node scripts/check-links.mjs",
-    "test": "npm run build && npm run check:js && npm run check:links"
+    "seed": "node scripts/seed-firebase.js"
   },
   "repository": {
     "type": "git",
@@ -21,11 +19,11 @@
   },
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1"
+    "firebase": "^10.12.5"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "firebase-admin": "^13.6.0",
     "firebase-tools": "^15.23.0",
     "http-server": "^14.1.1",
     "sass": "^1.69.7"

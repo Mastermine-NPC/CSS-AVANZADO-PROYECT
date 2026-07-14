@@ -1,2 +1,0 @@
-.product-grid{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,245px),1fr))}.category-list{display:grid;gap:1rem;grid-template-columns:repeat(2,1fr)}.category-list a{@include card-hover;background:$surface;border-radius:radius(md);box-shadow:$shadow-sm;color:$navy;padding:1.25rem;text-align:center}.category-list i{color:$primary;display:block;font-size:2rem;margin-bottom:.5rem}@include respond-to(md){.category-list{grid-template-columns:repeat(3,1fr)}}@include respond-to(lg){.category-list{grid-template-columns:repeat(6,1fr)}}
-

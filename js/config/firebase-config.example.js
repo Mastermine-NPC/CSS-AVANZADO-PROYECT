@@ -1,10 +1,8 @@
-// Copia este archivo como firebase-config.js y pega la configuración web de Firebase.
+// Copia este archivo como firebase-config.js y usa la configuración web de tu proyecto.
 export const firebaseConfig = {
   apiKey: 'REEMPLAZAR',
-  authDomain: 'REEMPLAZAR',
+  authDomain: 'REEMPLAZAR.firebaseapp.com',
   projectId: 'REEMPLAZAR',
-  storageBucket: 'REEMPLAZAR',
   messagingSenderId: 'REEMPLAZAR',
   appId: 'REEMPLAZAR'
 };
-

@@ -1,0 +1,10 @@
+.page-cart {
+  #cart-items { min-height: 8rem; }
+  #cart-total { color: $color-primary; font-size: 1.3rem; }
+
+  aside .content-card {
+    background: $color-surface-light;
+    position: sticky;
+    top: 6rem;
+  }
+}

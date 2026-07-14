@@ -1,111 +1,50 @@
-@include respond-max(1199px) {
-    .quick-grid,
-    .category-grid,
-    .featured-grid,
-    .product-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .market-header__top {
-        flex-wrap: wrap;
-    }
-
-    .market-search {
-        order: 3;
-        flex-basis: 100%;
-    }
+@include respond-to(tablet) {
+  .auth-card { padding: 2rem; }
 }
 
-@include respond-max(991px) {
-    .market-hero__content {
-        grid-template-columns: 1fr;
-    }
-
-    .market-hero__image {
-        height: 280px;
-    }
-
-    .quick-grid,
-    .category-grid,
-    .featured-grid,
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .product-image-container {
-        min-height: 320px;
-
-        img {
-            min-height: 300px;
-        }
-    }
+@include respond-to(desktop) {
+  .panel-page { max-width: 1100px; }
 }
 
-@include respond-max(767px) {
-    .section-padding {
-        padding: 3rem 0;
-    }
+@media (max-width: 575.98px) {
+  .product-card__image { height: 180px; }
 
-    .market-header {
-        position: static;
-    }
+  body > main.container,
+  .hero .container {
+    padding-bottom: 2rem !important;
+    padding-top: 2rem !important;
+  }
 
-    .market-brand {
-        min-width: 100%;
-    }
+  .page-title { font-size: clamp(2rem, 11vw, 2.65rem); }
+  .content-card,
+  .filter-panel,
+  .auth-card,
+  .hero__panel { padding: 1.15rem; }
 
-    .market-nav {
-        width: 100%;
-        justify-content: space-between;
-        gap: 0.4rem;
-    }
+  .page-product .product-detail {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1.5rem;
+    padding: 1rem;
+  }
 
-    .market-search {
-        min-width: 100%;
+  .page-publish-product #publish-form { padding: 1.15rem; }
+  .page-my-products main > .d-flex { align-items: flex-start !important; gap: 1rem; }
+  .navbar-brand { font-size: 1.05rem; }
+}
 
-        input {
-            min-width: 0;
-        }
-    }
+@media (max-width: 991.98px) {
+  .page-cart aside .content-card { position: static; }
+}
 
-    .market-hero__content {
-        padding: 1.25rem;
-    }
+@media (min-width: 1200px) {
+  .product-card__image { height: 240px; }
+}
 
-    .market-hero__image {
-        height: 230px;
-    }
-
-    .quick-grid,
-    .category-grid,
-    .featured-grid,
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .catalog-header,
-    .cart-header,
-    .catalog-toolbar,
-    .cart-list-header {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .product-detail-content {
-        padding: 1.5rem;
-    }
-
-    .detail-actions .btn {
-        width: 100%;
-    }
-
-    .cart-item {
-        grid-template-columns: 78px 1fr;
-
-        strong,
-        button {
-            grid-column: 2;
-            justify-self: start;
-        }
-    }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }

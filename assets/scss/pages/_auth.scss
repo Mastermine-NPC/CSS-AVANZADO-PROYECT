@@ -1,2 +1,11 @@
-.auth-page{background:linear-gradient(145deg,#f7f8fa,#fff1f2)}
+.page-auth {
+  .auth-page { max-width: 30rem; }
 
+  .auth-card {
+    background: $color-surface;
+    border-color: $color-border;
+    box-shadow: none;
+    margin-inline: auto;
+    padding: 2rem;
+  }
+}

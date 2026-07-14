@@ -1,0 +1,12 @@
+.page-catalog {
+  .filter-panel {
+    background: $color-surface;
+    border-color: $color-border;
+    box-shadow: none;
+  }
+
+  #catalog-products {
+    align-items: stretch;
+    row-gap: 2rem;
+  }
+}
