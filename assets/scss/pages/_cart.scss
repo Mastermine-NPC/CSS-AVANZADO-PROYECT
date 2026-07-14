@@ -1,0 +1,2 @@
+.cart-item{align-items:center;border-bottom:1px solid $soft;display:grid;gap:1rem;grid-template-columns:72px minmax(0,1fr) auto;padding:1rem}.cart-item:last-child{border:0}.cart-item img{border-radius:.5rem;height:72px;object-fit:cover;width:72px}.cart-item label{font-size:.75rem}.cart-item input{max-width:80px}.cart-item>button{grid-column:3}@include respond-to(md){.cart-item{grid-template-columns:80px minmax(0,1fr) 100px auto}.cart-item>button{grid-column:auto}}
+

@@ -1,0 +1,2 @@
+.catalog-layout{display:grid;gap:1.5rem}.filter-panel .offcanvas-body{background:$surface;display:block;padding:1.25rem}.catalog-toolbar{align-items:center;display:flex;justify-content:space-between;margin-bottom:1rem}.catalog-toolbar span{color:$muted;font-size:.82rem}@include respond-to(lg){.catalog-layout{grid-template-columns:260px minmax(0,1fr)}.filter-panel{border:0!important;position:static!important;transform:none!important;visibility:visible!important}.filter-panel .offcanvas-body{border-radius:radius(md);box-shadow:$shadow-sm;position:sticky;top:6rem}}
+

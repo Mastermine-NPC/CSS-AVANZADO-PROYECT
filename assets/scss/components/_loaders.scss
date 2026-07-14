@@ -1,0 +1,2 @@
+.loader-state{@include flex-center;flex-direction:column;gap:.75rem;grid-column:1/-1;min-height:220px}.app-loader{animation:spin .75s linear infinite;border:.24rem solid #e2e6eb;border-radius:50%;border-top-color:$primary;height:2.5rem;width:2.5rem}@keyframes spin{to{transform:rotate(1turn)}}
+

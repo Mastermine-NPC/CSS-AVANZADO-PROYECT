@@ -1,0 +1,80 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() { return request.auth != null; }
+    function isOwner(uid) { return isSignedIn() && request.auth.uid == uid; }
+    function currentUser() { return get(/databases/$(database)/documents/users/$(request.auth.uid)); }
+    function userExists() { return isSignedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)); }
+    function isActiveUser() { return userExists() && currentUser().data.status == 'active'; }
+    function isAdmin() { return isActiveUser() && currentUser().data.role == 'admin'; }
+    function immutableRequestFields() { return request.resource.data.productId == resource.data.productId && request.resource.data.ownerId == resource.data.ownerId && request.resource.data.requesterId == resource.data.requesterId && request.resource.data.type == resource.data.type; }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create: if isOwner(uid) && request.resource.data.uid == uid && request.resource.data.role == 'student' && request.resource.data.status == 'active';
+      allow update: if (isOwner(uid)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['firstName','lastName','displayName','studentCode','career','campus','phone','bio','photoURL','updatedAt'])
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.email == resource.data.email
+        && request.resource.data.role == resource.data.role
+        && request.resource.data.status == resource.data.status)
+        || (isAdmin()
+          && request.resource.data.uid == resource.data.uid
+          && request.resource.data.email == resource.data.email
+          && (uid != request.auth.uid || request.resource.data.status == 'active'));
+      allow delete: if false;
+      match /favorites/{productId} {
+        allow read, create, delete: if isOwner(uid);
+        allow update: if false;
+      }
+    }
+
+    match /products/{productId} {
+      allow read: if (resource.data.status == 'active' && resource.data.moderationStatus == 'approved') || (isSignedIn() && resource.data.ownerId == request.auth.uid) || isAdmin();
+      allow create: if isActiveUser() && request.resource.data.ownerId == request.auth.uid && request.resource.data.status == 'active' && request.resource.data.moderationStatus == 'pending';
+      allow update: if (isActiveUser()
+        && resource.data.ownerId == request.auth.uid
+        && request.resource.data.ownerId == resource.data.ownerId
+        && request.resource.data.moderationStatus == resource.data.moderationStatus
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['title','normalizedTitle','description','category','transactionType','price','condition','campus','quantity','imageURLs','exchangePreferences','loanConditions','status','updatedAt']))
+        || isAdmin();
+      allow delete: if false;
+    }
+
+    match /requests/{requestId} {
+      allow read: if isAdmin() || (isSignedIn() && (resource.data.ownerId == request.auth.uid || resource.data.requesterId == request.auth.uid));
+      allow create: if isActiveUser()
+        && request.resource.data.requesterId == request.auth.uid
+        && request.resource.data.ownerId != request.auth.uid
+        && request.resource.data.status == 'pending'
+        && exists(/databases/$(database)/documents/products/$(request.resource.data.productId))
+        && get(/databases/$(database)/documents/products/$(request.resource.data.productId)).data.ownerId == request.resource.data.ownerId
+        && get(/databases/$(database)/documents/products/$(request.resource.data.productId)).data.status == 'active'
+        && get(/databases/$(database)/documents/products/$(request.resource.data.productId)).data.moderationStatus == 'approved';
+      allow update: if isAdmin() || (isActiveUser()
+        && immutableRequestFields()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt'])
+        && ((resource.data.ownerId == request.auth.uid && resource.data.status == 'pending' && request.resource.data.status in ['accepted','rejected'])
+          || (resource.data.ownerId == request.auth.uid && resource.data.status == 'accepted' && request.resource.data.status == 'completed')
+          || (resource.data.requesterId == request.auth.uid && resource.data.status == 'pending' && request.resource.data.status == 'cancelled')));
+      allow delete: if false;
+    }
+
+    match /reports/{reportId} {
+      allow create: if isActiveUser() && request.resource.data.reporterId == request.auth.uid && request.resource.data.status == 'pending' && exists(/databases/$(database)/documents/products/$(request.resource.data.productId));
+      allow read: if isAdmin() || (isSignedIn() && resource.data.reporterId == request.auth.uid);
+      allow update: if isAdmin();
+      allow delete: if false;
+    }
+
+    match /transactions/{transactionId} {
+      allow read: if isAdmin() || (isSignedIn() && (resource.data.ownerId == request.auth.uid || resource.data.requesterId == request.auth.uid));
+      allow create: if isActiveUser()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.status in ['completed','cancelled']
+        && exists(/databases/$(database)/documents/requests/$(request.resource.data.requestId))
+        && getAfter(/databases/$(database)/documents/requests/$(request.resource.data.requestId)).data.status == 'completed';
+      allow update, delete: if false;
+    }
+  }
+}
