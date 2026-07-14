@@ -12,3 +12,4 @@ serviceAccount*.json
 .DS_Store
 Thumbs.db
 .vscode/
+serviceAccountKey.json
